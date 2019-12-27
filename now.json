@@ -1,0 +1,25 @@
+{
+  "build": {
+    "env": {
+      "NODEJS_AWS_HANDLER_NAME": "handler"
+    }
+  },
+  "env": {
+    "GRAPHQL_CORS_ORIGINS": "*"
+  },
+  "functions": {
+    "api/serverless.ts": {
+      "runtime": "@now/node@1.3.0",
+      "includeFiles": "src/schema/**/*.graphql"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "(.*)",
+      "destination": "/api/serverless"
+    }
+  ],
+  "name": "SDLK graphql",
+  "scope": "sdlk",
+  "version": 2
+}
