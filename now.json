@@ -19,7 +19,7 @@
       "destination": "/api/serverless"
     }
   ],
-  "name": "SDLK graphql",
-  "scope": "sdlk",
+  "name": "rkta starter apollo server",
+  "scope": "rkta",
   "version": 2
 }

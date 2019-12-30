@@ -1,5 +1,5 @@
 import { GraphQLError, GraphQLFormattedError } from 'graphql';
-import { Context, Config } from 'apollo-server-core';
+import { Config, Context } from 'apollo-server-core';
 import { makeExecutableSchema } from 'graphql-tools';
 import { applyMiddleware } from 'graphql-middleware';
 
@@ -13,10 +13,7 @@ export function getApolloServerOptions(): Config {
   const schema = applyMiddleware(schemaWithoutACL, accessControl);
 
   return {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    context: (context: any): Context => ({
-      koaContext: context.ctx,
-    }),
+    context: (): Context => ({}),
     schema,
     playground: !isProduction && {
       settings: {
