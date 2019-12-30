@@ -4,22 +4,17 @@ const { error } = dotenv.config();
 if (error) throw error;
 
 import debugModule from 'debug';
-import Koa from 'koa';
+import { ApolloServer } from 'apollo-server';
+import { getApolloServerOptions } from './getApolloServerOptions';
+import { cors } from './cors';
 
 const debug = debugModule('*');
 
-import { mountApolloServer } from './mountApolloServer';
-import { useCORS } from './useCORS';
+const { PORT } = process.env;
 
-const { KOA_PORT } = process.env;
+const options = getApolloServerOptions();
+const server = new ApolloServer({ ...options, cors });
 
-const app = new Koa();
-
-Promise.resolve(app)
-  .then(useCORS)
-  .then(mountApolloServer)
-  .then(() => {
-    app.listen(KOA_PORT, () => {
-      debug(`Listenting on port: ${KOA_PORT}`);
-    });
-  });
+server.listen(PORT).then(({ url }) => {
+  debug(`Listenting at: ${url}`);
+});
