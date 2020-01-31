@@ -3,8 +3,8 @@ import { Config, Context } from 'apollo-server-core';
 import { makeExecutableSchema } from 'graphql-tools';
 import { applyMiddleware } from 'graphql-middleware';
 
-import { accessControl } from './accessControl';
-import { typeDefs, resolvers } from './schema';
+import { accessControl } from '../accessControl';
+import { typeDefs, resolvers } from '../schema';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

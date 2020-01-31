@@ -9,9 +9,7 @@ import { config } from './config';
 import { cors } from './cors';
 
 const debug = debugModule('*');
-
 const { GRAPHICL_PORT } = process.env;
-
 const server = new ApolloServer({ ...config, cors });
 
 server.listen(GRAPHICL_PORT).then(({ url }) => {
