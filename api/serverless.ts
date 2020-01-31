@@ -1,8 +1,7 @@
 import { ApolloServer } from 'apollo-server-lambda';
-import { getApolloServerOptions } from '../src/getApolloServerOptions';
+import { config } from '../src/config';
 import { cors } from '../src/cors';
 
-const options = getApolloServerOptions();
-const server = new ApolloServer(options);
+const server = new ApolloServer(config);
 
 module.exports.handler = server.createHandler({ cors });
