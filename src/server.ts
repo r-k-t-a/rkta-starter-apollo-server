@@ -10,11 +10,11 @@ import { cors } from './cors';
 
 const debug = debugModule('*');
 
-const { PORT } = process.env;
+const { GRAPHICL_PORT } = process.env;
 
 const options = getApolloServerOptions();
 const server = new ApolloServer({ ...options, cors });
 
-server.listen(PORT).then(({ url }) => {
+server.listen(GRAPHICL_PORT).then(({ url }) => {
   debug(`Listenting at: ${url}`);
 });
