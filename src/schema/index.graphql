@@ -1,1 +1,1 @@
-# import Book, Query.* from "./Books/Books.graphql"
+# import Book, Query.*, Mutation.* from "./Books/Books.graphql"
