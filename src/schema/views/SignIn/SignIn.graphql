@@ -1,0 +1,7 @@
+type Query {
+  signedIn: Boolean
+}
+
+type Mutation {
+  signIn: Boolean
+}

@@ -1,5 +1,4 @@
 import merge from 'lodash/merge';
+import { viewResolvers } from './views/resolvers';
 
-import { BooksResolvers } from './Books/resolvers';
-
-export const resolvers = merge({}, BooksResolvers);
+export const resolvers = merge({}, viewResolvers);
