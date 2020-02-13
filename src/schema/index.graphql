@@ -1,1 +1,1 @@
-# import * from "./views/index.graphql"
+# import Book, Query.*, Mutation.* from "./Books/Books.graphql"
