@@ -9,7 +9,7 @@
     "commit": "git-cz",
     "dev": "NODE_ENV=development ts-node-dev --watch src/**/*.graphql src/server/start.ts",
     "prebuild": "npm run check:all && cd src && find . -type f -name *.graphql -exec install -D {} ../build/{} \\;",
-    "lint": "eslint config src --ext .js,.ts",
+    "lint": "eslint config api src --ext .js,.ts",
     "now-build": "exit 0",
     "predeploy": "npm run check:all && ts-node scripts/collect-schema.ts && apollo service:push",
     "prepro": "npm run build",
