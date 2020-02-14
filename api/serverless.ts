@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server-lambda';
-import { config } from '../src/config';
-import { cors } from '../src/cors';
+import { config } from '../src/server/config';
+import { cors } from '../src/server/cors';
 
 const server = new ApolloServer(config);
 
