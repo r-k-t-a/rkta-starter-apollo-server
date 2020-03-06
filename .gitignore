@@ -9,6 +9,7 @@ build
 /coverage/
 /node_modules/
 /package-lock.json
+src/@types/graphql-generated-types.d.ts
 /yarn.lock
 
 # Compiled source #

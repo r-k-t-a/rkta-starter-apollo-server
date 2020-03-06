@@ -29,3 +29,10 @@
       - error
       - single
     prettier/prettier: error
+  settings:
+    import/parsers:
+      '@typescript-eslint/parser':
+        - ts
+    import/resolver:
+      typescript:
+        alwaysTryTypes: true
