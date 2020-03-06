@@ -3,4 +3,6 @@ import { importSchema } from 'graphql-import';
 
 const typeDefsPath = path.join(__dirname, './index.graphql');
 
-export const typeDefs = importSchema(typeDefsPath);
+export const importSchemaDo = (): string => importSchema(typeDefsPath);
+
+export const typeDefs = importSchemaDo();

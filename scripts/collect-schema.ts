@@ -1,10 +1,18 @@
 import fs from 'fs';
 import path from 'path';
-import { typeDefs } from '../src/schema';
+import { importSchemaDo } from '../src/schema';
 
 const targetDir = path.join(__dirname, '../build');
 const targetPath = path.join(targetDir, 'schema.graphql');
 
-if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir);
+export const collectSchema = (): string => {
+  if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir);
 
-fs.writeFileSync(targetPath, typeDefs);
+  const nextTypeDefs = importSchemaDo();
+
+  fs.writeFileSync(targetPath, nextTypeDefs);
+
+  return nextTypeDefs;
+};
+
+if (require.main === module) collectSchema();

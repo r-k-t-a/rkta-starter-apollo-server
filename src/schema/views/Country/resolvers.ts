@@ -1,10 +1,8 @@
-interface Payload {
-  name: string;
-}
+import { Country as CountryType } from '@';
 
 export const Country = {
   Query: {
-    countries: (): [Payload] => {
+    countries: (): [CountryType] => {
       return [{ name: 'Moscow' }];
     },
   },
