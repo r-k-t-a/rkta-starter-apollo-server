@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { importSchemaDo } from '../src/schema';
+import { importSchemaDo } from '../src/schema/typeDefs';
 
 const targetDir = path.join(__dirname, '../build');
 const targetPath = path.join(targetDir, 'schema.graphql');

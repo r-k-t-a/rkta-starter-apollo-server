@@ -12,7 +12,6 @@
     "dev": "run-p dev:**",
     "collect-schema": "ts-node scripts/collect-schema",
     "generate-graphql-types": "ts-node scripts/generate-graphql-types",
-    "pregenerate-graphql-types": "npm run collect-schema",
     "prebuild": "npm run check:all && cd src && find . -type f -name *.graphql -exec install -D {} ../build/{} \\;",
     "lint": "eslint config api src --ext .js,.ts",
     "now-build": "exit 0",
