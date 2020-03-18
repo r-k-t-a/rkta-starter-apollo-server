@@ -1,5 +1,6 @@
 {
   "env": {
+    "DEFAULT_COUNTRY":"US",
     "GRAPHQL_CORS_ORIGINS": "*"
   },
   "functions": {
@@ -14,7 +15,6 @@
       "destination": "/api/serverless"
     }
   ],
-  "name": "rkta starter apollo server",
   "scope": "rkta",
   "version": 2
 }

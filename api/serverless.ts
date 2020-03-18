@@ -4,7 +4,7 @@ import { ApolloServer } from 'apollo-server-micro';
 import { config } from '../src/server/config';
 import { cors } from '../src/server/cors';
 
-const server = new ApolloServer(config);
+const server = new ApolloServer({ ...config, introspection: true });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const withCors = (handler: any) => (req: NowRequest, res: NowResponse, ...args: any[]): void => {
